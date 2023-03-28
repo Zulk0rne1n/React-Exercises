@@ -1,12 +1,12 @@
 import React from "react"
 import { Hello } from "./Hello"
 import { Welcome } from "./Welcome"
-export class App extends React.Component{
+export class App extends React.Component {
     render() {
         return (
-        <div>
-            <Hello />
-            <Welcome name="Ulas" age="29"/>
-        </div>)
+            <div>
+                <Hello />
+                <Welcome name={<strong>"Ulas"</strong>} age="29" />
+            </div>)
     }
 }
