@@ -1,10 +1,12 @@
 import React from "react"
 import { Hello } from "./Hello"
-export class App extends React.Component {
+import { Welcome } from "./Welcome"
+export class App extends React.Component{
     render() {
         return (
-            <div>
-                <Hello />
-            </div>)
+        <div>
+            <Hello />
+            <Welcome name="Ulas" />
+        </div>)
     }
 }
