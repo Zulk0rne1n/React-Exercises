@@ -8,6 +8,12 @@ export class Login extends React.Component {
         remember: false
     }
 
+    handleLogin = () => {
+        const { onLogin } = this.props;
+        const { username, password, remember } = this.state;
+        onLogin({ username, password, remember });
+    }
+
     handleInputChange = (event) => {
         const name = event.target.name
         const type = event.target.type
@@ -15,19 +21,21 @@ export class Login extends React.Component {
         const checked = event.target.checked
 
         this.setState({
-            [name] : type === 'checkbox' ? checked : value
+            [name]: type === 'checkbox' ? checked : value
         })
 
     }
 
 
-    render(){
-        return(
+    render() {
+        const isDisabled = !this.state.username || !this.state.password
+
+        return (
             <div>
-                <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange}/>
-                <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange}/>
-                <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange}/>
-                
+                <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange} />
+                <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+                <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
+                <button onClick={this.handleLogin} disabled={isDisabled}>login</button>
             </div>
         )
     }

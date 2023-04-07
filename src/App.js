@@ -10,6 +10,9 @@ import { Login } from "./Login"
 
 
 export class App extends React.Component {
+    handleLogin = (loginInfo) => {
+        console.log("Logging in with user data:", loginInfo);
+    };
     render() {
         return (
             <div>
@@ -19,7 +22,7 @@ export class App extends React.Component {
                 <ClickCounter initialValue={0} incrementAmount={3}/>
                 <ClickTracker />
                 <InteractiveWelcome /> */}
-                <Login />
+                <Login onLogin={this.handleLogin} />
             </div>)
     }
 }
