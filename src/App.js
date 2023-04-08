@@ -6,13 +6,14 @@ import { ClickCounter } from "./ClickCounter"
 import { ClickTracker } from "./ClickTracker"
 import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
+import { UncontrolledLogin } from "./UncontrolledLogin"
 
 
 
 export class App extends React.Component {
-    handleLogin = (loginInfo) => {
-        console.log("Logging in with user data:", loginInfo);
-    };
+    // handleLogin = (loginInfo) => {
+    //     console.log("Logging in with user data:", loginInfo);
+    // };
     render() {
         return (
             <div>
@@ -22,7 +23,8 @@ export class App extends React.Component {
                 <ClickCounter initialValue={0} incrementAmount={3}/>
                 <ClickTracker />
                 <InteractiveWelcome /> */}
-                <Login onLogin={this.handleLogin} />
+                {/* <Login onLogin={this.handleLogin} /> */}
+                <UncontrolledLogin />
             </div>)
     }
 }
