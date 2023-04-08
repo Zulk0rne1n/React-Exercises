@@ -7,24 +7,21 @@ import { ClickTracker } from "./ClickTracker"
 import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Login } from "./Login"
 import { UncontrolledLogin } from "./UncontrolledLogin"
+import { TodoList } from "./TodoList"
+import { Colors } from "./Colors"
 
 
+
+
+
+const items = ['Blue', 'Green', 'Yellow']
 
 export class App extends React.Component {
-    // handleLogin = (loginInfo) => {
-    //     console.log("Logging in with user data:", loginInfo);
-    // };
     render() {
         return (
             <div>
-                {/* <Hello />
-                <Welcome name="John" age={20} />
-                <Counter incrementAmount={1} timeout={500} initialValue={20}/>
-                <ClickCounter initialValue={0} incrementAmount={3}/>
-                <ClickTracker />
-                <InteractiveWelcome /> */}
-                {/* <Login onLogin={this.handleLogin} /> */}
-                <UncontrolledLogin />
+                {/* <UncontrolledLogin /> */}
+                <TodoList />
             </div>)
     }
 }
