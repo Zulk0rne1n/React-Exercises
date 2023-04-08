@@ -16,6 +16,7 @@ export class TodoList extends React.Component {
                 items: [...this.state.items, item]
             })
         }
+        this._inputRef.current.value = ""
     }
 
     render() {
