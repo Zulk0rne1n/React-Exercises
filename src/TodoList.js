@@ -25,6 +25,11 @@ export class TodoList extends React.Component {
         })
     }
 
+    handleRemove = (indexToRemove) => {
+        const filteredItems = this.state.items.filter((_, index) => index !== indexToRemove);
+        this.setState({ items: filteredItems });
+    }
+
     render() {
         console.log(this.state.items);
 
@@ -32,11 +37,15 @@ export class TodoList extends React.Component {
             <div>
                 <h3>Todo List</h3>
                 <input ref={this._inputRef} type="text"></input>
-                <button type='submit' onClick={this.handleSubmit}>Submit</button>
+                <button type='submit' onClick={this.handleSubmit}>Add</button>
                 <button onClick={this.handleReset} >Reset</button>
                 <ul>
                     {this.state.items.map((item, index) => (
-                        <li key={item + index}>{item}</li>
+                        <div>
+                            <li key={item + index}>{item}
+                                <button style={{marginLeft: "20px"}} onClick={() => this.handleRemove(index)}>Remove</button>
+                            </li>
+                        </div>
                     ))}
                 </ul>
             </div>
