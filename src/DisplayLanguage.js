@@ -1,7 +1,7 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
 
-const Strings = {
+const AvailableLanguages = {
     en: {
         CURRENT_LANGUAGE: "Selected language : English"
     },
@@ -11,15 +11,15 @@ const Strings = {
 }
 export class DisplayLanguage extends React.Component {
     render() {
-        
+
         return (
             <div>
                 <LanguageContext.Consumer >
                     {language => {
                         return (
-                            <div>
-                                {Strings[language].CURRENT_LANGUAGE}
-                            </div>
+                            <h1>
+                                {AvailableLanguages[language].CURRENT_LANGUAGE}
+                            </h1>
                         )
                     }}
                 </LanguageContext.Consumer>

@@ -1,13 +1,12 @@
 import React from "react";
-
-import { Message } from "./Message";
 import { LanguageContext } from "./LanguageContext";
-const Strings = {
+
+const Greetings = {
     en: {
-        CURRENT_WELCOME: "Hello, Welcome!"
+        GREETINGS: "Hello, Welcome!"
     },
     tr: {
-        CURRENT_WELCOME: "Merhaba, Hoşgeldiniz!"
+        GREETINGS: "Merhaba, Hoşgeldiniz!"
     }
 }
 
@@ -21,7 +20,7 @@ export class Hello extends React.Component {
                     {language => {
                         return (
                             <h2>
-                                {Strings[language].CURRENT_WELCOME}
+                                {Greetings[language].GREETINGS}
                             </h2>
                         )
                     }}

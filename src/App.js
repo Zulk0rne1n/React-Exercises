@@ -37,11 +37,8 @@ export class App extends React.Component {
                     <option value='tr'>Turkish</option>
                 </select>
                 <LanguageContext.Provider value={this.state.language}>
-                    <DisplayLanguage >
-                        {/* <UncontrolledLogin /> */}
-                       
-                    </DisplayLanguage>
-                    <Hello value={this.state.language}/>
+                    <Hello value={this.state.language} />
+                    <DisplayLanguage />
                 </LanguageContext.Provider>
             </div>)
     }
