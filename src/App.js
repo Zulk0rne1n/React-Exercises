@@ -7,7 +7,7 @@ export class App extends React.Component {
         return (
             <div>
 
-                <ClickCounter initialValue={0} incrementAmount={3}/>
+                <ClickCounter/>
             </div>)
     }
 }
