@@ -1,28 +1,25 @@
 import React from "react";
-
-import { Message } from "./Message";
 import { LanguageContext } from "./LanguageContext";
+
 const Strings = {
     en: {
-        CURRENT_WELCOME: "Hello, Welcome!"
+        CURRENT_LANGUAGE: "Selected language : English"
     },
     tr: {
-        CURRENT_WELCOME: "Merhaba, Hoşgeldiniz!"
+        CURRENT_LANGUAGE: "Tercih edilen dil:  Türkçe"
     }
 }
-
-export class Hello extends React.Component {
-
-
+export class DisplayLanguage extends React.Component {
     render() {
+        
         return (
             <div>
                 <LanguageContext.Consumer >
                     {language => {
                         return (
-                            <h2>
-                                {Strings[language].CURRENT_WELCOME}
-                            </h2>
+                            <div>
+                                {Strings[language].CURRENT_LANGUAGE}
+                            </div>
                         )
                     }}
                 </LanguageContext.Consumer>
