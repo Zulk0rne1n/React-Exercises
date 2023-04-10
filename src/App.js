@@ -1,38 +1,15 @@
 import React from "react"
-import { Counter } from "./Counter"
-import { Hello } from "./Hello"
-import { Welcome } from "./Welcome"
-import { ClickCounter } from "./ClickCounter"
-import { ClickTracker } from "./ClickTracker"
-import { InteractiveWelcome } from "./InteractiveWelcome"
-import { Login } from "./Login"
-import { UncontrolledLogin } from "./UncontrolledLogin"
-import { TodoList } from "./TodoList"
-import { Colors } from "./Colors"
-import { DisplayLanguage } from "./DisplayLanguage"
-import { LanguageContext } from "./LanguageContext"
+import Sum from "./Sum"
 
-
-
-
-
-const items = ['Blue', 'Green', 'Yellow']
 
 export class App extends React.Component {
 
-    state = {
-        language: 'en'
-    }
-
-    handleLanguageChange = (event) => {
-        this.setState({
-            language: event.target.value
-        })
-    }
     render() {
+        const numArr = [0, 5, 13, 29, 56]
+
         return (
             <div>
-                <Welcome name='Bernard' />
+                <Sum numbers={numArr} />
             </div>)
     }
 }
