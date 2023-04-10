@@ -39,10 +39,7 @@ export class TodoList extends React.Component {
                 <input ref={this._inputRef} type="text"></input>
                 <button type='submit' onClick={this.handleSubmit}>Add</button>
                 <button onClick={this.handleReset} >Reset</button>
-
-                <ul>
-                    {this.props.render(this.state.items, this.handleRemove)}
-                </ul>
+                {this.props.render(this.state.items, this.handleRemove)}
             </div>
         )
     }
