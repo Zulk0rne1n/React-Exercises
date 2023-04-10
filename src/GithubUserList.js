@@ -12,7 +12,7 @@ export function GithubUserList() {
         event.target.elements.username.value = ""
         console.log(event.target.elements.username.value);
     }
-    
+
     return (
         <div>
             {users.map((user, index) => {
