@@ -9,6 +9,7 @@ import { Login } from "./Login"
 import { UncontrolledLogin } from "./UncontrolledLogin"
 import { TodoList } from "./TodoList"
 import { Colors } from "./Colors"
+import { NewHookCounter } from "./NewHookCounter"
 
 
 
@@ -21,7 +22,7 @@ export class App extends React.Component {
         return (
             <div>
                 {/* <UncontrolledLogin /> */}
-                <TodoList />
+                <NewHookCounter />
             </div>)
     }
 }
