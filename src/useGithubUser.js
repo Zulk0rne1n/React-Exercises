@@ -13,6 +13,9 @@ function useGithubUser(username) {
       })
       .catch((error) => {
         setError(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [username]);
 

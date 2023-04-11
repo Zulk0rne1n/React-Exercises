@@ -5,6 +5,7 @@ export function GithubUser({ username }) {
 
     return (
         <div>
+            {loading && <p>Loading...</p>}
             {error && <p>Error loading user data</p>}
             {data && (
                 <div>
