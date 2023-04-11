@@ -1,14 +1,28 @@
-import React from "react"
+import React, { useEffect, useState } from 'react'
+import { CovidReport, } from './CovidReport'
 
-import { GithubUserList } from "./GithubUserList"
+export function App() {
+    const [covidData, setCovidData] = useState([])
+
+    useEffect(() => {
+        fetch("https://api.covid19api.com/summary")
+            .then((response) => response.json())
+            .then((data) => setCovidData(data.Countries))
+
+    }, [])
 
 
-
-export class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <GithubUserList />
-            </div>)
-    }
+    return (
+        <div>
+            <h2>Covid Update Report</h2>
+            {covidData.map((countryData) => (
+                <CovidReport
+                    key={countryData.CountryCode}
+                    country={countryData.Country}
+                    totalConfirmed={countryData.TotalConfirmed}
+                    lastUpdated={countryData.Date.slice(0, 10)}
+                />
+            ))}
+        </div>
+    )
 }

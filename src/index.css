@@ -1,0 +1,32 @@
+.country {
+    background-color: beige;
+    border: 2px solid maroon;
+    padding: 20px;
+    width: 10%;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-right: none;
+}
+.confirmed {
+    background-color:darksalmon;
+    padding: 20px;
+    width: 10%;
+    border: 2px solid maroon;
+    text-align: center;
+    border-right: none;
+}
+
+.last_update {
+    text-align: center;
+    background-color:firebrick;
+    width: 12%;
+    border: 2px solid maroon;
+    padding: 20px;
+   
+}
+
+.container {
+    display: flex;
+    
+}
