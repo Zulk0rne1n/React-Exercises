@@ -15,8 +15,8 @@ export function App() {
     return (
         <div>
             <select value={language} onChange={handleChangeLanguage}>
-                <option value="en"></option>
-                <option value="tr"></option>
+                <option value="en">English</option>
+                <option value="tr">Turkish</option>
             </select>
             <LanguageContext.Provider value={language}>
                 <Welcome />
