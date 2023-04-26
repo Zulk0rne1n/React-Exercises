@@ -1,19 +1,24 @@
-import React from "react";
-import { Age } from "./Age";
+import React, { useEffect, useRef, useState } from "react";
 import './index.css'
+import { DisplayLanguage } from "./DisplayLanguage";
 
-export class Welcome extends React.Component {
-    render() {
-        return (
-            <div className="welcome">
-                <p>Welcome {this.props.name}</p>
-                {this.props.name === "John" && <Age age={this.props.age}  />}
-            </div>
-        )
+export function Welcome() {
+    const [name, setName] = useState('World')
+    const inputRef = useRef()
+
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
+    function handleNameChange(event) {
+        setName(event.target.value)
     }
+
+    return (
+        <div>
+            <DisplayLanguage />
+            <h2>Hello, {name}</h2>
+            <input ref={inputRef} value={name} onChange={handleNameChange} />
+        </div>
+    )
 }
-
-
-// Welcome.defaultProps = {
-//     name: "Arda"
-// }
