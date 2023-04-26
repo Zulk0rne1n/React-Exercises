@@ -1,28 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { CovidReport, } from './CovidReport'
+import CarDetails from './CarDetails'
 
 export function App() {
-    const [covidData, setCovidData] = useState([])
-
-    useEffect(() => {
-        fetch("https://api.covid19api.com/summary")
-            .then((response) => response.json())
-            .then((data) => setCovidData(data.Countries))
-
-    }, [])
+    const initialCarData = {
+        model: 'mustang',
+        year: '1982',
+        color: 'red'
+    }
 
 
     return (
-        <div>
-            <h2>Covid Update Report</h2>
-            {covidData.map((countryData) => (
-                <CovidReport
-                    key={countryData.CountryCode}
-                    country={countryData.Country}
-                    totalConfirmed={countryData.TotalConfirmed}
-                    lastUpdated={countryData.Date.slice(0, 10)}
-                />
-            ))}
-        </div>
+        <CarDetails initialData={initialCarData}/>
     )
 }
