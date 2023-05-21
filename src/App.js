@@ -1,18 +1,19 @@
 import React from "react"
-import { Counter } from "./Counter"
-import { Hello } from "./Hello"
-import { Welcome } from "./Welcome"
 import { GithubUser } from "./GithubUser"
+import { Link, Route, Routes } from "react-router-dom"
+import { ShowGithubUser } from "./ShowGithubUser"
 
 
-export class App extends React.Component {
-    render() {
-        return (
-            <div>
-                {/* <Hello />
-                <Welcome name="John" age={17} />
-                <Counter initialValue={0} /> */}
-                <GithubUser username='Zulk0rne1n'/>
-            </div>)
-    }
+export default function App() {
+
+
+    return (
+        <div>
+            <Routes>
+                <Route path='/users' element={<GithubUser />}>
+                    <Route path='/users/:username' />
+                </Route>
+            </Routes>
+        </div>
+    )
 }
