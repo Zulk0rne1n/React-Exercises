@@ -1,6 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Welcome } from './Welcome'
 import { Counter } from "./Counter";
+import { GithubUser } from "./GitHubUser";
 
 
 export function App() {
@@ -9,7 +10,14 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Welcome />} />
                 <Route path="/counter" element={<Counter />} />
+                <Route path='/users/:user' element={<GithubUser />} />
             </Routes>
+            <div>
+                <Link to='/counter'>Counter</Link>
+            </div>
+            <div>
+                <Link to='/users/:user'>GitHubUser</Link>
+            </div>
         </div>
     )
 }

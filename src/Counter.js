@@ -1,5 +1,6 @@
 import React from "react";
 import { CounterDisplay } from "./CounterDisplay";
+import { Link } from "react-router-dom";
 
 
 export class Counter extends React.Component {
@@ -21,6 +22,7 @@ export class Counter extends React.Component {
     render() {
         return <div>
             <CounterDisplay count={this.state.count} />
+            <Link to='/'>Back</Link>
         </div>
     }
 }
