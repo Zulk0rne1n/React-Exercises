@@ -25,7 +25,8 @@ export function ShowGithubUser() {
                 <button type="submit">Submit </button>
             </form>
             {username && <GithubUser userX={username}/>}
-            
+            <Link to='/'>Back</Link>
+
         </div>
     );
 }
