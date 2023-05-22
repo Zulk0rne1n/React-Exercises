@@ -11,6 +11,7 @@ export function App() {
                 <Route path="/" element={<Welcome />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path='/users/:user' element={<GithubUser />} />
+                <Route path='*' element={<h3>Not Found</h3>} />
             </Routes>
             <div>
                 <Link to='/counter'>Counter</Link>
