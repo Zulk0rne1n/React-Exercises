@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 
-export function GithubUser() {
+export function GithubUser({ userX }) {
     const [data, setData] = useState(null)
-    const [userInput, setUserInput] = useState('')
     const navigate = useNavigate()
     const { user } = useParams();
-    const [username, setUsername] = useState('')
+
 
     useEffect(() => {
-        fetch(`https://api.github.com/users/${username}`)
+        fetch(`https://api.github.com/users/${userX}`)
             .then(response => {
                 return response.json()
             })
@@ -19,16 +18,9 @@ export function GithubUser() {
 
                 setData(json)
             })
-    }, [username])
+    }, [userX])
 
-    function handleInputChange(e) {
-        setUserInput(e.target.value)
-    }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        setUsername(userInput)
-    }
 
     return (
         <div>
@@ -37,10 +29,7 @@ export function GithubUser() {
                 <h1>Full Name: {data.name}</h1>
                 <img style={{ width: '150px', height: '150px' }} src={data.avatar_url}></img>
             </div>}
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleInputChange} type="text" value={userInput} />
-                <button type="submit">Submit </button>
-            </form>
+
             <Link to='/'>Back</Link>
         </div>
     )
